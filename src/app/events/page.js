@@ -1,5 +1,6 @@
 'use client';
 import { getEventList } from '@/api';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -20,9 +21,18 @@ const Events = () => {
       <div className="flex w-full gap-10 flex-row flex-wrap">
         {events?.map((item, index) => {
           return (
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div
+              key={item?.id}
+              class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            >
               <a href="#">
-                <img class="rounded-t-lg" src={item?.event_image} alt="" />
+                <img
+                  class="rounded-t-lg"
+                  src={item?.event_image}
+                  alt=""
+                  width="100%"
+                  height="100%"
+                />
               </a>
               <div class="p-5">
                 <a href="#">
